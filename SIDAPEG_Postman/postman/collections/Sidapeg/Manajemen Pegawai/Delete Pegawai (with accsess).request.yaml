@@ -1,0 +1,8 @@
+$kind: http-request
+url: "{{base_url}}/api/pegawai/{{pegawai_id}}"
+method: DELETE
+body:
+  type: json
+  content: "{\r\n  \"konfirmasi\": true\r\n}"
+examples: .resources/Delete Pegawai (with accsess).resources/examples
+order: 8000

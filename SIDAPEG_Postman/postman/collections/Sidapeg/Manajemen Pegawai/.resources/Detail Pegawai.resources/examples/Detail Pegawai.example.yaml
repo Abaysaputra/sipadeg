@@ -1,0 +1,116 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/pegawai"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:47:20 GMT
+    - key: Content-Type
+      value: application/json
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6InYvUVl2eTAwU3ZmOFdLdDFXUER5MFE9PSIsInZhbHVlIjoiWnFwTUg2dnpqNzAvaDhLajc1bHNxbHpNRGV4emVwQTgzOGVrSXg4L3RGUk00d3ZrL1pCam5jblM1OWhIaEJiTFFKekdacmFYUHF6MlBBZCtjTDVaWTcvTmYraVVnODBjK216TC9KNzQ0a2I3ODBJN083QlhSZ0NuQzI2V2FDQjIiLCJtYWMiOiIwMDRkYzVhZTMzMTFkOTJjMWNmYjZjYzkyYTNmYTk0ZDNiNTJlMDc2MmVjNzllOGVjMjMwZjNiMjljMzIxODE0IiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:47:20 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6InAzM3RuNDJML2l1WTFlb2MwbVFlUUE9PSIsInZhbHVlIjoiK2lDVHVoeFhqbTNUeS8rY2dTc1UrbEZKR1B1UzdEYkJWZWJxcFNrSFg0blpnWElzQ28vM3JvWEZ3WG1aY3J3dzEzQlVOOC84T0djYzZaVFgrWHNnYSt6Y0dGaGViRk9PQ2JrVWozTnp0TG9IQThDZFFpcFk1a0I3RFV3d2pwT3ciLCJtYWMiOiI1MTFkZDVlMGRiZjViZjVhNzk5NDhkMDNjNDI0YmY1MjgxMjcwMGI4OTgwM2FkZDZlYmM1Njk4NzM3NmE3MzZiIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:47:20 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: json
+    content: |-
+      [
+        {
+          "id": 1,
+          "nomor_pegawai": "PG001",
+          "nama": "Ayu Lestari",
+          "jenis_kelamin": "P",
+          "tanggal_lahir": "2003-08-12",
+          "divisi_id": 1,
+          "pendidikan_id": 3,
+          "created_at": "2026-11-06T16:12:30.000000Z",
+          "updated_at": "2026-11-06T16:12:30.000000Z",
+          "divisi": "Teknologi Informasi",
+          "pendidikan": "S1",
+          "usia": 23
+        },
+        {
+          "id": 2,
+          "nomor_pegawai": "PG002",
+          "nama": "Bima Saputra",
+          "jenis_kelamin": "L",
+          "tanggal_lahir": "1995-05-21",
+          "divisi_id": 2,
+          "pendidikan_id": 3,
+          "created_at": "2026-11-06T16:12:30.000000Z",
+          "updated_at": "2026-11-06T16:12:30.000000Z",
+          "divisi": "Keuangan",
+          "pendidikan": "S1",
+          "usia": 31
+        },
+        {
+          "id": 3,
+          "nomor_pegawai": "PG003",
+          "nama": "Citra Dewi",
+          "jenis_kelamin": "P",
+          "tanggal_lahir": "1986-02-10",
+          "divisi_id": 3,
+          "pendidikan_id": 4,
+          "created_at": "2026-11-06T16:12:30.000000Z",
+          "updated_at": "2026-11-06T16:12:30.000000Z",
+          "divisi": "Operasional",
+          "pendidikan": "S2",
+          "usia": 40
+        },
+        {
+          "id": 4,
+          "nomor_pegawai": "PG004",
+          "nama": "Damar Putra",
+          "jenis_kelamin": "L",
+          "tanggal_lahir": "1974-12-18",
+          "divisi_id": 3,
+          "pendidikan_id": 1,
+          "created_at": "2026-11-06T16:12:30.000000Z",
+          "updated_at": "2026-11-06T16:12:30.000000Z",
+          "divisi": "Operasional",
+          "pendidikan": "SMA/SMK",
+          "usia": 51
+        },
+        {
+          "id": 5,
+          "nomor_pegawai": "PG005",
+          "nama": "Eka Wulandari",
+          "jenis_kelamin": "P",
+          "tanggal_lahir": "1999-11-22",
+          "divisi_id": 2,
+          "pendidikan_id": 2,
+          "created_at": "2026-11-06T16:12:30.000000Z",
+          "updated_at": "2026-11-06T16:12:30.000000Z",
+          "divisi": "Keuangan",
+          "pendidikan": "D3",
+          "usia": 26
+        },
+        {
+          "id": 9,
+          "nomor_pegawai": "PG006",
+          "nama": "Testing",
+          "jenis_kelamin": "L",
+          "tanggal_lahir": "2002-02-22",
+          "divisi_id": 3,
+          "pendidikan_id": 1,
+          "created_at": "2026-11-08T13:43:26.000000Z",
+          "updated_at": "2026-11-08T13:43:26.000000Z",
+          "divisi": "Operasional",
+          "pendidikan": "SMA/SMK",
+          "usia": 24
+        }
+      ]
+order: 1000

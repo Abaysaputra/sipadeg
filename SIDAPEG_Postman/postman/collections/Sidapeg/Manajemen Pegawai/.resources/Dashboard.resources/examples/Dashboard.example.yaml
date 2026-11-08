@@ -1,0 +1,49 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/dashboard"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:48:18 GMT
+    - key: Content-Type
+      value: application/json
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6Ik8zd1hIOXJNaWJLb1pMZnZOaWw1UEE9PSIsInZhbHVlIjoiSnBjRGRnK0hoN3JtbTA5c3IwR3paaTNCT25iMjB0WFMwVHF5eWxFR0kyUmRDbUt3VWhvaVdjL0hmRkhvcjdsTW5sT0FNRjBiMExvcit1OFFacGhVb3lqaWp2UUs3YUExMnd5Y3ZJK3I3dm9tS01HemszbkVNeGVESG5WUzdCQ3kiLCJtYWMiOiJiYzQ3NzQ2MWFmZDEzZGIxNTdlYTVkNDBkNDZiZDQzODkwNzg3OTc2M2JiNGM1YTMwYjM4N2IxYTgwYzg0YmYzIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:48:18 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6IjNUZVlCWFlIQXUvWUtRTEF6TE50cnc9PSIsInZhbHVlIjoiZk5kUXZUdW9wM2s1RnVwRUExUHlmeTdzYWZENEE4a2paNlRlK2tyS3FZM2dSeTB3NFpGdDNteFU2a2tybm9LQ1FjeVJuUHdFNm9UL1piMHJTTjhUdndhL280TkhEclphMmMvSzdhQVRTWFZXRVRpc3NGZThNY3hHK1p0djJVYngiLCJtYWMiOiIxMjM0NmYwZTJkZjYxZmM4OGUwY2I0YzQ5MDdjMWYxODk3NDQ3YjE1OGQxNjQxYTEyZGQxNmVkNWFmOWUwZGZmIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:48:18 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: json
+    content: |-
+      {
+        "total": 6,
+        "jenis_kelamin": {
+          "Laki-laki": 3,
+          "Perempuan": 3
+        },
+        "pendidikan": {
+          "SMA/SMK": 2,
+          "D3": 1,
+          "S1": 2,
+          "S2": 1
+        },
+        "usia": {
+          "<25": 2,
+          "25-34": 2,
+          "35-44": 1,
+          "45+": 1
+        }
+      }
+order: 1000

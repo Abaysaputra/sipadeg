@@ -1,0 +1,41 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/pegawai/{{pegawai_id}}"
+  method: DELETE
+  body:
+    type: json
+    content: "{\r\n  \"konfirmasi\": false\r\n}"
+response:
+  statusCode: 422
+  statusText: Unprocessable Content
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:53:34 GMT
+    - key: Content-Type
+      value: application/json
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6IkJ4andhZDdSYWkwZXVHekJ4aE1TeGc9PSIsInZhbHVlIjoibXZyU1phZmxqSVBFQnlxZUY0R2ZmNXpSY0dJWVZML1VCNC9kMmJmS2xHRDhrWUtPV0MxSmZzM2w2WjVKQ1VFYitHS0t2SHNiRGpUNERZbG5aNXVMelB2bWZIeGlNYUF5TkRGMUsyYmFaQ1o0dFJvVjBVUDhpd2ZwdmtUdUxvR2IiLCJtYWMiOiIzZmZiZjcyM2EzYWVlYjA4MjMyZWJkYzdlZTI0Y2VkNjcyZjMyYjI1MGNhMDVlNjc2MzM3YWU5MTlhNmMwZjZhIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:53:34 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6IkpOWlNGMmRTRDMxc1JySDFjb0lweEE9PSIsInZhbHVlIjoiWS85dUtqSkFTbHJWYmpFK1lIVE9wOHdsQzNsU0g0akc0YWtKeStLVUNNc3JpSFVoaTkxYXc2VDlHS3NGZE8rblhYYVhqazAxdE4zRWt6TFdXcHpUdXNEejBIY2V2emtUUk02VllFYVBYVW02RTk5ZjkvYVo1Ky9tRzM5dWRnRUEiLCJtYWMiOiI4ZDlhZjlkODg1YjI2M2Q5NTgyYjgxNzQ1NDAxMmYyYTU0YmQ4OTI5NmJlMzE3Njg4OTY1M2U1YjE1ZGEwM2VhIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:53:34 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: json
+    content: |-
+      {
+        "message": "The konfirmasi field must be accepted.",
+        "errors": {
+          "konfirmasi": [
+            "The konfirmasi field must be accepted."
+          ]
+        }
+      }
+order: 1000

@@ -1,0 +1,100 @@
+$kind: collection
+variables:
+  base_url: ""
+  pegawai_id: ""
+scripts:
+  - type: http:beforeRequest
+    code: "pm.request.headers.upsert({\r
+
+      \    key: \"Accept\",\r
+
+      \    value: \"application/json\"\r
+
+      });\r
+
+      \r
+
+      const metodeTulis = [\"POST\", \"PUT\", \"PATCH\", \"DELETE\"];\r
+
+      \r
+
+      if (metodeTulis.includes(pm.request.method)) {\r
+
+      \    try {\r
+
+      \        const baseUrl = pm.collectionVariables.get(\"base_url\");\r
+
+      \r
+
+      \        const response = await pm.sendRequest({\r
+
+      \            url: baseUrl + \"/sanctum/csrf-cookie\",\r
+
+      \            method: \"GET\",\r
+
+      \            header: {\r
+
+      \                Accept: \"application/json\"\r
+
+      \            }\r
+
+      \        });\r
+
+      \r
+
+      \        if (response.code !== 204) {\r
+
+      \            throw new Error(\r
+
+      \                \"Ambil CSRF gagal. Status HTTP: \" + response.code\r
+
+      \            );\r
+
+      \        }\r
+
+      \r
+
+      \        const cookie = response.headers.all().find(header =>\r
+
+      \            header.key.toLowerCase() === \"set-cookie\" &&\r
+
+      \            header.value.startsWith(\"XSRF-TOKEN=\")\r
+
+      \        );\r
+
+      \r
+
+      \        if (!cookie) {\r
+
+      \            throw new Error(\"Cookie XSRF-TOKEN tidak ditemukan.\");\r
+
+      \        }\r
+
+      \r
+
+      \        const token = cookie.value\r
+
+      \            .split(\";\")[0]\r
+
+      \            .slice(\"XSRF-TOKEN=\".length);\r
+
+      \r
+
+      \        pm.request.headers.upsert({\r
+
+      \            key: \"X-XSRF-TOKEN\",\r
+
+      \            value: decodeURIComponent(token)\r
+
+      \        });\r
+
+      \    } catch (error) {\r
+
+      \        pm.execution.skipRequest();\r
+
+      \        throw error;\r
+
+      \    }\r
+
+      }"
+    language: text/javascript

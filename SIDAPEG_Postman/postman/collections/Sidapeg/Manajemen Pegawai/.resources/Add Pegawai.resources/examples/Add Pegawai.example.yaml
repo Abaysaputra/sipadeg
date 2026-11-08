@@ -1,0 +1,59 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/pegawai"
+  method: POST
+  body:
+    type: json
+    content: "{\r
+
+      \  \"nama\": \"Rani Uji Postman\",\r
+
+      \  \"jenis_kelamin\": \"P\",\r
+
+      \  \"tanggal_lahir\": \"1998-04-17\",\r
+
+      \  \"divisi_id\": 1,\r
+
+      \  \"pendidikan_id\": 3\r
+
+      }"
+response:
+  statusCode: 201
+  statusText: Created
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:49:13 GMT
+    - key: Content-Type
+      value: application/json
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6ImE1dTRESy81bHJzeXlJYmJJRk83QkE9PSIsInZhbHVlIjoiUG9WcXhCZ1R0L1FnMysyK3RqTHg2VjArZVVPMXZocm1pTmN5aWwzNW5QQXdLR01ZakV3VVh3OFZmb3FFQjg2WnFTQUtlRThPRGp5c2hjcFFranZlZFpJREIwcGk1aVh2VFd0Q0RkSFN6MDFYdDFqYm1MUHJyY1JUUHBpT3kvTUEiLCJtYWMiOiIwNGVkNDY4MjMwYWViNzAwNTE0MDgyOTU4MjE3ZGY1YWY5NGIwZmY0MTk1OTQwZmZmYTMzYzU3NDZkMjMzNzBkIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:49:13 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6Im9XNXk2YUhXR3BXWldSeklUZjIrVEE9PSIsInZhbHVlIjoicUVDckFKMFJnbmdIcjdxU0E5OWtRZ3lLcXJHMzhxd21VVUV6cHNMemFJWVBjK1FsbkhRbW50dURnN0NXMVpvQ2l2emRtSE9jdTZURnJvaDdSVVFORG52c0FFN294OGNiQzZjNk9CSUowYjAzTEt1MkI4UFdvVnQrZk1ITHZWcTAiLCJtYWMiOiI3YzFhMjA1NjFjMzIxN2YxMDgzMTc0YzBlNTdkOTRkOWYwMDhmNjAzYjg4NGY3MzNjMWIyMWIwNDMwZjk5YzAwIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:49:13 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: json
+    content: |-
+      {
+        "id": 11,
+        "nomor_pegawai": "PG008",
+        "nama": "Rani Uji Postman",
+        "jenis_kelamin": "P",
+        "tanggal_lahir": "1998-04-17",
+        "divisi_id": 1,
+        "pendidikan_id": 3,
+        "created_at": "2026-11-08T14:49:13.000000Z",
+        "updated_at": "2026-11-08T14:49:13.000000Z",
+        "divisi": "Teknologi Informasi",
+        "pendidikan": "S1",
+        "usia": 28
+      }
+order: 1000

@@ -1,0 +1,5 @@
+$kind: http-request
+url: "{{base_url}}/api/pegawai/{{pegawai_id}}"
+method: GET
+examples: .resources/Detail Pegawaii.resources/examples
+order: 5000

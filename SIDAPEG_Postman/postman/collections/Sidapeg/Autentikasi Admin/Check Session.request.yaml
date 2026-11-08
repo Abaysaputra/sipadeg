@@ -1,0 +1,46 @@
+$kind: http-request
+url: "{{base_url}}/api/pegawai"
+method: GET
+headers:
+  Accept: application/json
+  Content-Type: application/json
+  X-XSRF-TOKEN: "{{sidapeg_csrf}}"
+body:
+  type: json
+  content: "{\r
+
+    \  \"nomor_pegawai\": \"UJI001\",\r
+
+    \  \"nama\": \"Rani Uji Postman\",\r
+
+    \  \"jenis_kelamin\": \"P\",\r
+
+    \  \"tanggal_lahir\": \"1998-04-17\",\r
+
+    \  \"divisi_id\": 1,\r
+
+    \  \"pendidikan_id\": 3\r
+
+    }"
+scripts:
+  - type: beforeRequest
+    code: |-
+      pm.sendRequest({
+          url: 'http://127.0.0.1:8000/sanctum/csrf-cookie',
+          method: 'GET'
+      }, function(err, res) {
+          if (err) {
+              console.error('Failed to fetch CSRF token:', err);
+              return;
+          }
+          var xsrfCookie = res.cookies.get('XSRF-TOKEN');
+          if (xsrfCookie) {
+              pm.globals.set('sidapeg_csrf', decodeURIComponent(xsrfCookie));
+              console.log('CSRF token refreshed successfully');
+          } else {
+              console.warn('XSRF-TOKEN cookie not found in response');
+          }
+      });
+    language: text/javascript
+examples: .resources/Check Session.resources/examples
+order: 1000

@@ -1,0 +1,64 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/referensi"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:47:56 GMT
+    - key: Content-Type
+      value: application/json
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6IkRDZFpNelV4MTNHQmdmOUJXbEU0VVE9PSIsInZhbHVlIjoiWU9XY3Jmczd1VHFlSmlQR2RWbGxVaXF4QlY2aTJrL2xTbHUzVDZzRXB3U1FlODFIN1I4QnRvUnhhWWJNeUpMQ1Z0bHlkNDAyMFU4U29Pci9mTFFobWRIVWhNK0d6MTAzZjF4bEdxUWNEMFJlR2pwZXZPejcyejhCK0pyRWxxYzQiLCJtYWMiOiI4YmJlODQ4MTI3OGVjYWI2MzNmZTMyYTc2N2I5YjBhNTY5YTUyYTZjZTVjODlmYTNlY2U5YTdmMTJhMTZlYWY5IiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:47:56 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6IlJsR0tuLzJSMjU5anJMMnNiRExCZEE9PSIsInZhbHVlIjoiUTR3Uk44ZEtOR0x3SW9mZmp1eEtxRzVTUUxuRk1ManZ1dDdpaUE2YjZDbkxrZnlUS3QvSzc2UTBSWkdEV1lDa0UwUnBSRVR3cHpiWE54SHBDVGpYTjJ3TEdPTXhuVWgralk5QlJhbXIzMlNzUFNtNlBwQkdzK0JhU1pEdU9rRU4iLCJtYWMiOiIxNjNmNzkxOTk0NDEyMjFiMjNlYzhiZjhhOWM5NDE0NmUwZTM5YWU5YjJlZjc5NmIyNTgwMDI2MjgxYjZjOTQ5IiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:47:56 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: json
+    content: |-
+      {
+        "divisi": [
+          {
+            "id": 1,
+            "nama": "Teknologi Informasi"
+          },
+          {
+            "id": 2,
+            "nama": "Keuangan"
+          },
+          {
+            "id": 3,
+            "nama": "Operasional"
+          }
+        ],
+        "pendidikan": [
+          {
+            "id": 1,
+            "nama": "SMA/SMK"
+          },
+          {
+            "id": 2,
+            "nama": "D3"
+          },
+          {
+            "id": 3,
+            "nama": "S1"
+          },
+          {
+            "id": 4,
+            "nama": "S2"
+          }
+        ]
+      }
+order: 1000

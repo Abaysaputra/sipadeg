@@ -1,0 +1,44 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/pegawai/{{pegawai_id}}"
+  method: GET
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:52:32 GMT
+    - key: Content-Type
+      value: application/json
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6IkhzZDc4RDBtRTJNNnBYU3dVUm12Nnc9PSIsInZhbHVlIjoiQkJuS2pDTmxzUEdScGRnekUycmRldWxhZk5yc1FZMkQvSU5DM1BKMlFpWm8rQmIvWStMcEkyRXAwc0JaeVo1eFY5SXp2dDR0MEV0YXFCbUdvREpuWWJONUtlaUkwN00xWVc0ZGtYODRFczNieGx4MVFyTEZ5UHk5NytpbDBiSSsiLCJtYWMiOiJkN2YzMmUyODY3NzNlYzQ4OWZlZTMwMTE4YWJkMjc5ZWFmYmIwMWQ0MWE3OGQxY2VmNDdiOTEwMDBiMmU3OGIwIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:52:32 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6IkZISzZaOVMxZFNRY1ppVVZ1R1Q3OWc9PSIsInZhbHVlIjoiWGNVMWtVOTk0Q01ETHBCUFJYSmZqU01oS3JQeE5COUNwb0NERDdPNEtEbjdPb0l3NGZpcDd5dGpGT3Y1ZnJjanB1eEZucnFCMDd2c0I4ZGZKdkM1NXpySUw0bnhMUktRRG05anNFQmd0UzRiajRjVzJrc1lxamc4dVN4S2pmc1QiLCJtYWMiOiJiOWFkNWQxNmVmMTY0NDU0YmU0NjVmMmE4ZmU5OTkwYjFmNmNiYWViZDE3ZWVkYmIxZTJkYmFjNzNkMWE2MWMyIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:52:32 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: json
+    content: |-
+      {
+        "id": 1,
+        "nomor_pegawai": "PG001",
+        "nama": "Rani Setelah Diubah",
+        "jenis_kelamin": "P",
+        "tanggal_lahir": "2003-08-12",
+        "divisi_id": 1,
+        "pendidikan_id": 3,
+        "created_at": "2026-11-06T16:12:30.000000Z",
+        "updated_at": "2026-11-08T14:52:18.000000Z",
+        "divisi": "Teknologi Informasi",
+        "pendidikan": "S1",
+        "usia": 23
+      }
+order: 1000

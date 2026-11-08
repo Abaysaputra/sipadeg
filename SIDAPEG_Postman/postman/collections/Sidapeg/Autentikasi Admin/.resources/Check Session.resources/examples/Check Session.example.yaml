@@ -1,0 +1,54 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/pegawai"
+  method: GET
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    X-XSRF-TOKEN: "{{sidapeg_csrf}}"
+  body:
+    type: json
+    content: "{\r
+
+      \  \"nomor_pegawai\": \"UJI001\",\r
+
+      \  \"nama\": \"Rani Uji Postman\",\r
+
+      \  \"jenis_kelamin\": \"P\",\r
+
+      \  \"tanggal_lahir\": \"1998-04-17\",\r
+
+      \  \"divisi_id\": 1,\r
+
+      \  \"pendidikan_id\": 3\r
+
+      }"
+response:
+  statusCode: 401
+  statusText: Unauthorized
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:45:49 GMT
+    - key: Content-Type
+      value: application/json
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6ImhleEpTVmJ1SFNaSFJmUzVGOWdhWVE9PSIsInZhbHVlIjoiaytOaW5Nd010cktOdmMxK0RQL0hnNEVwUGF5UFp1MmU4V1RyRVY0cDFKeEVUWGxvQ1hLdWllWnZpY1o4R0VwYjVLcGVHMmJEcENUKzB1TFFEY1ZKMEx0Z3dFMW1wUy9Sa3V6S1VrZ2pJUjBqL1hOc3RLUzBxVUdzS2xxeEt2MTAiLCJtYWMiOiI3NGJmYzMzOWI1N2RkMjE4ZTFjNzI0NzViMjZhYmI5NjUyMGUzZTIxYTgyMTExYTRlYWNiMDhjYjAzYjI5NDM0IiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:45:49 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6IjlGdE84YWo5cWZpdjZxWFZ2UVp4dGc9PSIsInZhbHVlIjoiek5aaEREVEVJLzlndHhNeUV2VGwyVUU0ZFlLcjRZWlJGQ0xNN3kyKzZxUTFEcGhoVkVTdXhUVDBZR2c1ODJpbEo3RldPZW1EZDkvT09FU2lXZlR4N3NwOWgrT3hGQzVYcVBLcjR5aVBaeFU2djZGVlM2bFYzdENpUTJCVmF0YTIiLCJtYWMiOiI5NmNiNzA0YzJlY2JiNzQ5Yzg4OGNkODhhMmQ3NzU4YjE2NzMxODNmOTBkZTE0MGVhMGExNDk1MzVjNTU3NmRjIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:45:49 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: json
+    content: |-
+      {
+        "message": "Unauthenticated."
+      }
+order: 1000

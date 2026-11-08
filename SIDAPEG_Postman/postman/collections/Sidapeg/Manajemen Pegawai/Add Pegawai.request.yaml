@@ -1,0 +1,20 @@
+$kind: http-request
+url: "{{base_url}}/api/pegawai"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"nama\": \"Rani Uji Postman\",\r
+
+    \  \"jenis_kelamin\": \"P\",\r
+
+    \  \"tanggal_lahir\": \"1998-04-17\",\r
+
+    \  \"divisi_id\": 1,\r
+
+    \  \"pendidikan_id\": 3\r
+
+    }"
+examples: .resources/Add Pegawai.resources/examples
+order: 4000

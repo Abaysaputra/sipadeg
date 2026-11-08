@@ -1,0 +1,31 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/pegawai/{{pegawai_id}}"
+  method: DELETE
+  body:
+    type: json
+    content: "{\r\n  \"konfirmasi\": true\r\n}"
+response:
+  statusCode: 204
+  statusText: No Content
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:54:38 GMT
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6ImY1RmZCdFpZR24xVHBoVmdiYlk0WXc9PSIsInZhbHVlIjoiZ2Y5S0toTlR2UTA3dXBlTGtJMEhpS2dBSDluclNodEd1K3ZIcUM2MVFFOHlMMXVoamRmTEkxdW44ZWNzSEJxbFV6MUowbGQ2SWZSV2tjY0tkYVErWlFZWTdoT1UvRi9nWWxZUDZPcng4YVFNNi9zdGk2eUpxVTI1RFl0blZtaUMiLCJtYWMiOiIzY2Q1MDQwNDA5ODM4NDJjMDQ2YTIyM2MzOTgxNmZiYzFhZDFlNTFkMmQ2ZWEyNjRjNTAzYjhjZmY0YTM5MWYzIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:54:38 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6IkJLdHMwaVZqTnpBdmtBMXEwRDdRZHc9PSIsInZhbHVlIjoiY0JyVklqYkVjS3o5UmsrWFRtRUVMem9aSVJRdVhVZDU1ekhGcmRxd2tCMVBnQjA4TmY5Y0ZBdVdlVWNCMFcxVUJSR2prYlJYSm9OdE5vN0FQTERrM3NGbzFQRjZIbjdrb2xxM01yYzBac08vanJkUEJnVzBMMnllTmVKd0Y2Y1MiLCJtYWMiOiJmNzIxN2Y5NThhNTU5NDVlMDY0NDMwNmFhMjRmYjViMTU5M2U4NjM3YTlmMWJjNTllMmJiOGRjOTJjZjk1MGFkIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:54:38 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: text
+    content: ""
+order: 1000

@@ -816,3 +816,86 @@ a:focus-visible {
     width: 100%;
   }
 }
+
+/* Styling Bagian Bawah Table & Pagination */
+.table-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background: #ffffff; /* Memastikan background solid agar menutupi area di belakangnya */
+  border-top: 1px solid var(--border); /* Menyekat secara tegas dari tabel */
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  margin-top: 0;
+}
+
+.table-bottom-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination button.page-nav {
+  padding: 6px 12px;
+}
+
+.pagination button.page-num {
+  padding: 4px;
+  min-width: 32px;
+  height: 32px;
+  font-weight: 500;
+}
+
+.pagination button:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.pagination button:disabled {
+  color: #94a3b8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.pagination button.page-num.active {
+  background: #6366f1;
+  color: #ffffff;
+  border-color: #6366f1;
+  font-weight: 600;
+}
+
+.page-ellipsis {
+  color: #94a3b8;
+  padding: 0 4px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}

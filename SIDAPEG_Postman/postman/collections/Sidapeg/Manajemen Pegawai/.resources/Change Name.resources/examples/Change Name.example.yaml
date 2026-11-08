@@ -1,0 +1,51 @@
+$kind: http-example
+request:
+  url: "{{base_url}}/api/pegawai/{{pegawai_id}}"
+  method: PATCH
+  body:
+    type: json
+    content: "{\r
+
+      \  \"nama\": \"Rani Setelah Diubah\"\r
+
+      }"
+response:
+  statusCode: 200
+  statusText: OK
+  headers:
+    - key: Host
+      value: 127.0.0.1:8000
+    - key: Connection
+      value: close
+    - key: X-Powered-By
+      value: PHP/8.2.29
+    - key: Cache-Control
+      value: no-cache, private
+    - key: Date
+      value: Sun, 08 Nov 2026 14:52:18 GMT
+    - key: Content-Type
+      value: application/json
+    - key: Access-Control-Allow-Origin
+      value: "*"
+    - key: Set-Cookie
+      value: XSRF-TOKEN=eyJpdiI6IlJIaUhnNFFXVFNTWnRCb2w1YUx0cVE9PSIsInZhbHVlIjoiMWNlWGlld1JqT1Fqa3Rkd0IxUWRzMEdBa1Z5TjdrZXdnV1RQTXF2R1NSQ2hUNUdDb01TTWw2b3R6NCtPcHJrNTlWYkJOMUdRTEZmMERPcFFGNlNEZnVFenI2cEpTK1NZcmJBemJwYS95Qk9qTmNwU2pTZE94UmRtcUUvL3hEVnIiLCJtYWMiOiJiMGNjMGMzMTkyODdmMGVmMzE2MDg3OTlmMDEwN2MyZTkxMDc0OTgyN2RiNjU0NWMzZDQyNjM4YzdhNzFjZDgzIiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:52:18 GMT; Max-Age=7200; path=/; samesite=lax
+    - key: Set-Cookie
+      value: laravel-session=eyJpdiI6Ii80V1lzSWs2b0liL0h1ZGtyOHNHWFE9PSIsInZhbHVlIjoieUtQaVlrRzZ6VlJMWFBNM3JmbzRyM0ZoWWFDVG1MNk44dy80Zm1ZQ0oxRkhTZDlrWVJYSno3UHF5NzRxb3pZR0FTdkllRUVEQ0swRVYyckRLTTUwVUtPNHhhcG0xUVlkN3JVMUhnUk1lSG5CWU1waHpBekhNaEVreVBkVzNHeUciLCJtYWMiOiJmN2Q1M2Y4YjNhY2VhYjNlOWMxOGZjZWJlZDc0OWEyMDY0YTlmN2NkNzEwN2E5N2RhNGQxMDJiNGFhNWQxN2U4IiwidGFnIjoiIn0%3D; expires=Sun, 08 Nov 2026 16:52:18 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+  body:
+    type: json
+    content: |-
+      {
+        "id": 1,
+        "nomor_pegawai": "PG001",
+        "nama": "Rani Setelah Diubah",
+        "jenis_kelamin": "P",
+        "tanggal_lahir": "2003-08-12",
+        "divisi_id": 1,
+        "pendidikan_id": 3,
+        "created_at": "2026-11-06T16:12:30.000000Z",
+        "updated_at": "2026-11-08T14:52:18.000000Z",
+        "divisi": "Teknologi Informasi",
+        "pendidikan": "S1",
+        "usia": 23
+      }
+order: 1000

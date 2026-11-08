@@ -1,0 +1,5 @@
+workspace:
+  id: 8c095f69-9ffa-4ab1-8a45-235046bc35d8
+cloudResources:
+  collections:
+    ../postman/collections/Sidapeg: 46301438-8f65f206-3af2-4deb-86ad-e2c4e4069c68

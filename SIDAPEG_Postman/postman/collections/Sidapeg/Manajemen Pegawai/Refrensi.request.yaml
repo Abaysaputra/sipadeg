@@ -1,0 +1,5 @@
+$kind: http-request
+url: "{{base_url}}/api/referensi"
+method: GET
+examples: .resources/Refrensi.resources/examples
+order: 2000

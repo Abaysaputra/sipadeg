@@ -1,0 +1,13 @@
+$kind: http-request
+url: "{{base_url}}/login"
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"email\": \"admin@sidapeg.test\",\r
+
+    \  \"password\": \"DemoPegawai26!\"\r
+
+    }"
+order: 2000

@@ -1,0 +1,12 @@
+$kind: http-request
+url: "{{base_url}}/api/pegawai/{{pegawai_id}}"
+method: PATCH
+body:
+  type: json
+  content: "{\r
+
+    \  \"nama\": \"Rani Setelah Diubah\"\r
+
+    }"
+examples: .resources/Change Name.resources/examples
+order: 6000
