@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import api, { getErrorMessage } from '../services/api';
 import Dashboard from './Dashboard';
 import EmployeeManager from './EmployeeManager';
+import MasterData from './MasterData';
 import UiIcon from './UiIcon';
 import './modernize.css';
 
@@ -63,7 +64,7 @@ export default function Workspace({ onLogout, busy, error, onSessionChange }) {
       <nav id="sidapeg-navigation" className="sidebar-nav" aria-label="Menu utama"
         onKeyDown={e => { if (e.key === 'Escape') setMenuOpen(false); }}>
         <p className="nav-caption">MENU UTAMA</p>
-        {[{id:'dashboard',label:'Dashboard',icon:'grid'},{id:'employees',label:'Data Pegawai',icon:'users'}].map(menu =>
+        {[{id:'dashboard',label:'Dashboard',icon:'grid'},{id:'employees',label:'Data Pegawai',icon:'users'},{id:'master',label:'Data Master',icon:'grid'}].map(menu =>
           <button key={menu.id} className={'nav-item ' + (view === menu.id ? 'active' : '')}
             aria-current={view === menu.id ? 'page' : undefined} onClick={() => navigate(menu.id)}>
             <UiIcon name={menu.icon}/><span>{menu.label}</span><UiIcon name="chevron" size={15}/>
@@ -77,15 +78,16 @@ export default function Workspace({ onLogout, busy, error, onSessionChange }) {
     </aside>
     <div className="admin-main">
       <header className="topbar">
-        <div className="breadcrumb"><span>Workspace</span><UiIcon name="chevron" size={14}/><strong>{view === 'dashboard' ? 'Dashboard' : 'Data Pegawai'}</strong></div>
+        <div className="breadcrumb"><span>Workspace</span><UiIcon name="chevron" size={14}/><strong>{{dashboard:'Dashboard', employees:'Data Pegawai', master:'Data Master'}[view]}</strong></div>
         <div className="topbar-actions"><span className="account-label"><span className="account-dot"/>Admin</span>
           <button className="secondary-button logout-button" onClick={onLogout} disabled={busy}><UiIcon name="logout" size={17}/>{busy ? 'Memproses…' : 'Keluar'}</button>
         </div>
       </header>
       <main className="page-content" id="sidapeg-content" tabIndex={-1}>
         {error && <p className="alert" role="alert">{error}</p>}
-        {view === 'dashboard' ? <DashboardContent onSessionChange={onSessionChange} onManage={() => navigate('employees')}/>
-          : <EmployeeManager onSessionChange={onSessionChange}/>}
+        {view === 'dashboard' && <DashboardContent onSessionChange={onSessionChange} onManage={() => navigate('employees')}/>}
+        {view === 'employees' && <EmployeeManager onSessionChange={onSessionChange}/>}
+        {view === 'master' && <MasterData onSessionChange={onSessionChange}/>}
         <footer className="workspace-footer"><span>SIDAPEG</span><span>Sistem Informasi Data Pegawai</span></footer>
       </main>
     </div>

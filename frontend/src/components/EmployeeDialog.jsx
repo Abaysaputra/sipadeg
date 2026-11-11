@@ -170,19 +170,6 @@ export default function EmployeeDialog({
           ) : (
             <fieldset disabled={busy} className="employee-form">
               <div className="field">
-                <label htmlFor="pegawai-nomor_pegawai">Nomor pegawai</label>
-                <input id="pegawai-nomor_pegawai" readOnly
-                  value={mode === 'edit' ? employee.nomor_pegawai : ''}
-                  placeholder="Dibuat otomatis setelah disimpan"
-                  aria-describedby={headingId + '-nomor-help'} />
-                <small id={headingId + '-nomor-help'}>
-                  {mode === 'edit'
-                    ? 'Nomor pegawai tetap dan tidak dapat diubah.'
-                    : 'Cukup isi data pegawai. Sistem akan menentukan nomornya.'}
-                </small>
-                {fieldError('nomor_pegawai')}
-              </div>
-              <div className="field">
                 <label htmlFor="pegawai-nama">Nama lengkap</label>
                 <input {...inputProps('nama')} maxLength={100} />
                 {fieldError('nama')}
