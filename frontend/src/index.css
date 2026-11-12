@@ -838,6 +838,38 @@ a:focus-visible {
   font-size: 12px;
 }
 
+.table-bottom-info,
+.pagination-area {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.page-size-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.page-size-control select {
+  min-width: 58px;
+  padding: 6px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #ffffff;
+  color: #475569;
+  font-size: 12px;
+}
+
+.pagination-summary {
+  color: #64748b;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
 .pagination {
   display: flex;
   align-items: center;
@@ -898,4 +930,13 @@ a:focus-visible {
   padding: 0 4px;
   font-weight: 600;
   letter-spacing: 1px;
+}
+
+@media (max-width: 760px) {
+  .table-bottom-container,
+  .table-bottom-info,
+  .pagination-area {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
 }

@@ -26,7 +26,7 @@ export default function EmployeeManager({ onSessionChange }) {
   const detailRequest = useRef(null);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  const [itemsPerPage, setItemsPerPage] = useState(5);
 
   useEffect(() => () => detailRequest.current?.abort(), []);
 
@@ -58,7 +58,7 @@ export default function EmployeeManager({ onSessionChange }) {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [search, division]);
+  }, [search, division, itemsPerPage]);
 
   async function openEmployee(mode, id) {
     if (detailRequest.current) return;
@@ -96,6 +96,11 @@ export default function EmployeeManager({ onSessionChange }) {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentItems = filtered.slice(startIndex, startIndex + itemsPerPage);
   const pageNumbers = getPageNumbers(currentPage, totalPages);
+  const endIndex = Math.min(startIndex + currentItems.length, filtered.length);
+
+  useEffect(() => {
+    setCurrentPage((page) => Math.min(page, Math.max(1, totalPages)));
+  }, [totalPages]);
 
   const locked = loading || opening;
   const canAdd = references.divisi.length > 0 && references.pendidikan.length > 0;
@@ -184,43 +189,65 @@ export default function EmployeeManager({ onSessionChange }) {
           
           {/* Kontainer Bawah: Dipisahkan penuh dari tabel */}
           <div className="table-bottom-container">
-            <div className="table-bottom-note">
-              <UiIcon name="check" size={16}/><span>Dibuat otomatis saat disimpan.</span>
+            <div className="table-bottom-info">
+              <div className="table-bottom-note">
+                <UiIcon name="check" size={16}/><span>Dibuat otomatis saat disimpan.</span>
+              </div>
+              <label className="page-size-control" htmlFor="employee-page-size">
+                Tampilkan
+                <select
+                  id="employee-page-size"
+                  value={itemsPerPage}
+                  onChange={(event) => setItemsPerPage(Number(event.target.value))}
+                >
+                  {[5, 10, 25, 50].map((size) => <option value={size} key={size}>{size}</option>)}
+                </select>
+                data
+              </label>
             </div>
             
-            {totalPages > 1 && (
-              <div className="pagination">
-                <button 
-                  className="page-nav"
-                  disabled={currentPage === 1} 
-                  onClick={() => setCurrentPage(p => Math.max(1, p - 1))}>
-                  <UiIcon name="chevron-left" size={16}/> Sebelum
-                </button>
+            <div className="pagination-area">
+              {filtered.length > 0 && (
+                <span className="pagination-summary">
+                  Menampilkan {startIndex + 1}-{endIndex} dari {filtered.length}
+                </span>
+              )}
+              {totalPages > 1 && (
+                <div className="pagination">
+                  <button
+                    className="page-nav"
+                    disabled={currentPage === 1}
+                    onClick={() => setCurrentPage((page) => Math.max(1, page - 1))}
+                  >
+                    <UiIcon name="chevron-left" size={16}/> Sebelum
+                  </button>
 
-                <div className="page-numbers">
-                  {pageNumbers.map((pageNum, idx) => (
-                    pageNum === '...' ? (
-                      <span key={`ellipsis-${idx}`} className="page-ellipsis">...</span>
-                    ) : (
-                      <button
-                        key={pageNum}
-                        className={`page-num ${currentPage === pageNum ? 'active' : ''}`}
-                        onClick={() => setCurrentPage(pageNum)}
-                      >
-                        {pageNum}
-                      </button>
-                    )
-                  ))}
+                  <div className="page-numbers">
+                    {pageNumbers.map((pageNum, idx) => (
+                      pageNum === '...' ? (
+                        <span key={`ellipsis-${idx}`} className="page-ellipsis">...</span>
+                      ) : (
+                        <button
+                          key={pageNum}
+                          className={`page-num ${currentPage === pageNum ? 'active' : ''}`}
+                          onClick={() => setCurrentPage(pageNum)}
+                        >
+                          {pageNum}
+                        </button>
+                      )
+                    ))}
+                  </div>
+
+                  <button
+                    className="page-nav"
+                    disabled={currentPage === totalPages}
+                    onClick={() => setCurrentPage((page) => Math.min(totalPages, page + 1))}
+                  >
+                    Lanjut <UiIcon name="chevron-right" size={16}/>
+                  </button>
                 </div>
-
-                <button 
-                  className="page-nav"
-                  disabled={currentPage === totalPages} 
-                  onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}>
-                  Lanjut <UiIcon name="chevron-right" size={16}/>
-                </button>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </section>
       )}

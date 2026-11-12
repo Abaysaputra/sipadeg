@@ -23,7 +23,9 @@ body:has(.sidapeg-ui) #root { width: 100%; max-width: none; margin: 0; padding: 
 .sidapeg-ui .sidebar {
   position: sticky; top: 0; width: auto; height: 100dvh; display: flex; flex-direction: column;
   background: #fff; border-right: 1px solid var(--ui-line); padding: 32px 22px 24px; overflow-y: auto;
+  scrollbar-width: none; -ms-overflow-style: none;
 }
+.sidapeg-ui .sidebar::-webkit-scrollbar { display: none; }
 .sidapeg-ui .sidebar-brand-row { display: flex; align-items: center; justify-content: space-between; }
 .sidapeg-ui .brand { display: flex; align-items: center; gap: 12px; color: var(--ui-ink); padding: 0 8px;
   border: 0; background: transparent; text-align: left; font-size: 23px; font-weight: 800; letter-spacing: -.7px; }
